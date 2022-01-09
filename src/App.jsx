@@ -20,7 +20,6 @@ const App = () => {
       localStorage.clear();
       await localStorage.setItem("MyTasks", JSON.stringify(tasks));
     })();
-    console.log(tasks);
   }, [tasks]);
 
   const handleTaskClick = (taskId) => {
@@ -39,7 +38,9 @@ const App = () => {
   };
 
   const handleTaskAddition = (taskTitle) => {
-    if (!!taskTitle) {
+    const jaExiste = tasks.findIndex((task) => task.title === taskTitle);
+
+    if (!!taskTitle && jaExiste === -1) {
       if (!!tasks) {
         const newTasks = [
           ...tasks,
