@@ -6,7 +6,7 @@ import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 
 const App = () => {
-  const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState([{}]);
 
   useEffect(() => {
     (async () => {
