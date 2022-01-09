@@ -38,7 +38,7 @@ const App = () => {
   };
 
   const handleTaskAddition = (taskTitle) => {
-    const jaExiste = tasks.findIndex((task) => task.title === taskTitle);
+    const jaExiste = tasks?.findIndex((task) => task.title === taskTitle);
 
     if (!!taskTitle && jaExiste === -1) {
       if (!!tasks) {
